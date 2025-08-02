@@ -1,0 +1,104 @@
+- request: "What is my IP address?"
+  command: "ipconfig"
+  description: "Displays basic IP configuration for network adapters."
+
+- request: "Show me all my network details, including my DNS server and MAC address."
+  command: "ipconfig /all"
+  description: "Displays full TCP/IP configuration for all adapters, including MAC address, DHCP, and DNS servers."
+
+- request: "Find my computer's physical address."
+  command: "ipconfig /all"
+  description: "Displays full TCP/IP configuration, which includes the physical (MAC) address."
+
+- request: "Check if I can connect to google.com."
+  command: "ping google.com"
+  description: "Tests network connectivity to a specified host by sending ICMP echo requests."
+
+- request: "Ping the server at 8.8.8.8 and don't stop."
+  command: "ping -t 8.8.8.8"
+  description: "Pings the specified host continuously until stopped manually with Ctrl+C."
+
+- request: "Trace the network path to cloudflare.com."
+  command: "tracert cloudflare.com"
+  description: "Traces the route that packets take to reach a network host."
+
+- request: "List all active network connections and listening ports."
+  command: "netstat -an"
+  description: "Displays all active TCP connections and listening TCP and UDP ports in numerical form."
+
+- request: "Show me which programs are using the network."
+  command: "netstat -b"
+  description: "Displays the executable involved in creating each connection or listening port. Requires admin rights."
+
+- request: "Find the IP address for github.com."
+  command: "nslookup github.com"
+  description: "Performs a DNS query to find the IP address associated with a domain name."
+
+- request: "What is my MAC address?"
+  command: "getmac"
+  description: "Displays the Media Access Control (MAC) address of all network adapters."
+
+- request: "Show me the ARP cache to see devices on my local network."
+  command: "arp -a"
+  description: "Displays the current ARP cache, which maps IP addresses to physical MAC addresses."
+
+- request: "Clear my DNS cache."
+  command: "ipconfig /flushdns"
+  description: "Purges the DNS resolver cache to clear out old or incorrect entries."
+
+- request: "Display the IP routing table."
+  command: "route print"
+  description: "Shows the network routing table, which dictates where network traffic is sent."
+
+- request: "Release my current IP address."
+  command: "ipconfig /release"
+  description: "Releases the current DHCP-assigned IP address lease."
+
+- request: "Get a new IP address from the server."
+  command: "ipconfig /renew"
+  description: "Renews the DHCP-assigned IP address lease from the server."
+
+
+  - request: "How can I see all the Wi-Fi networks I've connected to before?"
+  command: "netsh wlan show profiles"
+  description: "Lists all the wireless network profiles saved on the computer."
+
+- request: "What's the password for my saved Wi-Fi network called 'MyHomeWiFi'?"
+  command: "netsh wlan show profile name=\"MyHomeWiFi\" key=clear"
+  description: "Displays the properties and security key (password) of a saved Wi-Fi profile. Replace 'MyHomeWiFi' with the actual network name."
+
+- request: "Is my internet connection working at all?"
+  command: "ping 8.8.8.8"
+  description: "Tests connectivity to Google's public DNS server, a reliable way to see if you can reach the internet."
+
+- request: "Am I connected to my router properly?"
+  command: "ping 192.168.1.1"
+  description: "Tests connectivity to a common default router IP address. Helps diagnose local network issues."
+
+- request: "Why is it taking so long for a website to load?"
+  command: "tracert google.com"
+  description: "Traces the network path to a destination to see where slowdowns might be occurring."
+
+- request: "My computer says 'unidentified network'. What command can I run to see my IP?"
+  command: "ipconfig"
+  description: "Shows basic IP configuration, which can help diagnose connection problems like having no IP address."
+
+- request: "I need to find the MAC address for my Ethernet adapter."
+  command: "ipconfig /all"
+  description: "Shows all network details, including the Physical Address (MAC) for all adapters."
+
+- request: "Is this website down or is it just me?"
+  command: "nslookup a-website.com"
+  description: "Checks if a domain name can be resolved to an IP address. If it works, the site's DNS is likely up. Replace a-website.com."
+
+- request: "I think a program is using port 8080. How can I check?"
+  command: "netstat -an | find \"8080\""
+  description: "Checks all active connections and ports and filters for a specific port number."
+
+- request: "I need to reset my computer's network settings."
+  command: "ipconfig /release"
+  description: "Releases the current IP address from the DHCP server."
+
+- request: "How do I get a new IP address from my router?"
+  command: "ipconfig /renew"
+  description: "Requests a new IP address lease from the DHCP server."

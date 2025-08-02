@@ -1,0 +1,95 @@
+- request: "Give me a detailed report of my system."
+  command: "systeminfo"
+  description: "Displays detailed configuration information about a computer and its operating system."
+
+- request: "What version of Windows am I running?"
+  command: "ver"
+  description: "Displays the current version number of the Windows operating system."
+
+- request: "What's my computer's name?"
+  command: "hostname"
+  description: "Displays the host name of the current computer."
+
+- request: "Who am I logged in as?"
+  command: "whoami"
+  description: "Displays the user name and group information for the currently logged-on user."
+
+- request: "Show me my user account details including my SID."
+  command: "whoami /all"
+  description: "Displays all available information for the current user, including the security identifier (SID)."
+
+- request: "List all the device drivers installed on my computer."
+  command: "driverquery"
+  description: "Displays a list of all installed device drivers and their properties."
+
+- request: "Get specific details about my operating system."
+  command: "wmic os get Caption,CSDVersion /value"
+  description: "Uses WMI to get specific OS details like the name and service pack version."
+
+- request: "Tell me about my CPU, like its name and number of cores."
+  command: "wmic cpu get Name, NumberOfCores, NumberOfLogicalProcessors"
+  description: "Uses WMI to retrieve detailed information about the system's processor."
+
+- request: "How much RAM do I have?"
+  command: "wmic memorychip get Capacity"
+  description: "Uses WMI to list the capacity (in bytes) of each installed memory module."
+
+- request: "What kind of motherboard do I have?"
+  command: "wmic baseboard get Product, Manufacturer"
+  description: "Uses WMI to find the manufacturer and product name of the computer's motherboard."
+
+- request: "How long has the system been running?"
+  command: 'systeminfo | find "System Boot Time"'
+  description: "Finds the system boot time from the systeminfo command to determine uptime."
+
+- request: "What is the current system time?"
+  command: "time /t"
+  description: "Displays the current system time without prompting for a new time."
+
+- request: "What is today's date?"
+  command: "date /t"
+  description: "Displays the current system date without prompting for a new date."
+
+- request: "How do I find my computer's serial number?"
+  command: "wmic bios get serialnumber"
+  description: "Retrieves the BIOS serial number, which is often the same as the computer's serial number."
+
+- request: "What is the exact model of my laptop?"
+  command: "wmic computersystem get model"
+  description: "Fetches the system model as reported by the hardware."
+
+- request: "Is my version of Windows 32-bit or 64-bit?"
+  command: "wmic os get osarchitecture"
+  description: "Checks the operating system architecture to see if it's 32-bit or 64-bit."
+
+- request: "When was Windows installed on this machine?"
+  command: 'systeminfo | find "Original Install Date"'
+  description: "Filters system information to find the date when the OS was first installed."
+
+- request: "How long has my PC been on without a restart?"
+  command: 'systeminfo | find "System Boot Time"'
+  description: "Finds out the last time the computer was booted up to determine uptime."
+
+- request: "What's my current username?"
+  command: "echo %username%"
+  description: "A very simple command to display the username of the currently logged-in user."
+
+- request: "Show me all the system environment variables."
+  command: "set"
+  description: "Displays all the environment variables for the current user session."
+
+- request: "I need to check the installed Java version for a class project."
+  command: "java -version"
+  description: "Checks for the installed version of Java, if it's in the system PATH."
+
+- request: "What version of Python is installed on my computer?"
+  command: "python --version"
+  description: "Checks for the installed version of Python, if it's in the system PATH."
+
+- request: "What programs are currently running in the background?"
+  command: "tasklist"
+  description: "Provides a list of all running processes, which helps to see what's active."
+
+- request: "My mouse is acting weird, can I get a list of all my drivers?"
+  command: "driverquery"
+  description: "Displays a list of all installed device drivers, useful for troubleshooting hardware."
