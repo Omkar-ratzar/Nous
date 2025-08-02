@@ -1,0 +1,105 @@
+- request: "List all the files and folders in the current directory."
+  command: "dir"
+  description: "Displays a list of files and subdirectories in a directory."
+
+- request: "Show me only the directories here."
+  command: "dir /ad"
+  description: "Displays only the directories within the current path."
+
+- request: "Show me the folder structure as a tree."
+  command: "tree"
+  description: "Graphically displays the folder structure of a drive or path."
+
+- request: "What directory am I currently in?"
+  command: "cd"
+  description: "Displays the name of or changes the current directory."
+
+- request: "Go back to the parent directory."
+  command: "cd .."
+  description: "Changes the current directory to the parent folder."
+
+- request: "Create a new folder named 'MyProject'."
+  command: "mkdir MyProject"
+  description: "Creates a new directory or folder."
+
+- request: "Delete the empty folder named 'OldStuff'."
+  command: "rmdir OldStuff"
+  description: "Removes (deletes) an empty directory."
+
+- request: "Force delete the folder 'ToDelete' and everything inside it."
+  command: "rmdir /s /q ToDelete"
+  description: "Deletes a directory and all its subdirectories and files quietly without confirmation."
+
+- request: "Delete the file named 'report.txt'."
+  command: "del report.txt"
+  description: "Deletes one or more files."
+
+- request: "Delete all text files in this folder."
+  command: "del *.txt"
+  description: "Deletes all files with the .txt extension in the current directory."
+
+- request: "Show me the contents of the text file 'notes.txt'."
+  command: "type notes.txt"
+  description: "Displays the contents of a text file on the screen."
+
+- request: "Create a new empty file called 'newfile.txt'."
+  command: "echo. > newfile.txt"
+  description: "Creates a new, empty file. A common trick using the echo command."
+
+- request: "Rename 'old_name.txt' to 'new_name.txt'."
+  command: "ren old_name.txt new_name.txt"
+  description: "Renames a file or a directory."
+
+- request: "Copy the file 'data.csv' to the D drive."
+  command: "copy data.csv D:\\"
+  description: "Copies one or more files to another location."
+
+- request: "Copy an entire folder and its contents, including empty subfolders."
+  command: "xcopy SourceFolder DestinationFolder /s /e"
+  description: "Copies files and directory trees, including empty directories. Replace SourceFolder and DestinationFolder."
+
+
+- request: "I'm lost in the command prompt, where am I right now?"
+  command: "cd"
+  description: "Displays the name of the current directory. Also known as 'print working directory'."
+
+- request: "How do I see all files, even the hidden ones?"
+  command: "dir /a"
+  description: "Lists all files and directories, including those with hidden attributes."
+
+- request: "Search for a file named 'assignment' in this folder and all its subfolders."
+  command: "dir *assignment*.* /s"
+  description: "Searches for a file containing 'assignment' in its name recursively through all subdirectories."
+
+- request: "Can you list all the files on my desktop?"
+  command: "dir \"%USERPROFILE%\\Desktop\""
+  description: "Lists the contents of the current user's Desktop directory."
+
+- request: "I need to create folders for my classes: Math, History, and English."
+  command: "mkdir Math History English"
+  description: "Creates multiple new directories at once."
+
+- request: "How do I rename a folder from 'Old Docs' to 'Archived Docs'?"
+  command: "ren \"Old Docs\" \"Archived Docs\""
+  description: "Renames a file or directory. Use quotes for names with spaces."
+
+- request: "I want to move a file, not copy it."
+  command: "move report.docx ..\\"
+  description: "Moves a file to a different location. '..' moves it to the parent directory."
+
+- request: "Copy all my Word documents to my backup folder."
+  command: "copy *.docx ..\\BackupFolder\\"
+  description: "Copies all files with a specific extension to another directory."
+
+- request: "How do I quickly open 'notes.txt' to read or edit it?"
+  command: "notepad notes.txt"
+  description: "Opens a text file directly in the Notepad application."
+
+- request: "Delete all files in the 'temp' folder without asking for each one."
+  command: "del /q temp\\*.*"
+  description: "Deletes all files in a specified folder quietly, without prompting for confirmation."
+
+- request: "How do I add some text to the end of a file?"
+  command: "echo some new text >> existing_file.txt"
+  description: "Appends a line of text to the end of a file without overwriting its contents."
+  

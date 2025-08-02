@@ -1,0 +1,83 @@
+- request: "How much free space is on my C drive?"
+  command: "wmic logicaldisk where name=\"C:\" get size,freespace"
+  description: "Uses WMI to get the total size and free space (in bytes) of a specific drive."
+
+- request: "Show me the size and free space for all my drives."
+  command: "wmic logicaldisk get name,size,freespace"
+  description: "Uses WMI to list the total size and free space for all logical disks."
+
+- request: "List all the drive letters on my system."
+  command: "fsutil fsinfo drives"
+  description: "Lists all drives on the system, including hard drives and optical drives."
+
+- request: "Check my C drive for errors but don't fix them."
+  command: "chkdsk C:"
+  description: "Checks a disk for file system errors and provides a status report."
+
+- request: "Scan and fix errors on my D drive."
+  command: "chkdsk D: /f"
+  description: "Finds and fixes errors on the specified disk. Often requires a reboot to run."
+
+- request: "Scan my E drive for bad sectors."
+  command: "chkdsk E: /r"
+  description: "Locates bad sectors and recovers readable information. Implies /f."
+
+- request: "What is the label of my C drive?"
+  command: "vol C:"
+  description: "Displays the disk volume label and serial number for a specific drive."
+
+- request: "Change the name of my D drive to 'Data'."
+  command: "label D: Data"
+  description: "Changes the volume label of a disk. Requires admin rights."
+
+- request: "List all the physical disks installed in the computer."
+  command: "echo list disk | diskpart"
+  description: "Uses diskpart to display a list of all physical disks connected to the system."
+
+- request: "List all the volumes or partitions on my computer."
+  command: "echo list volume | diskpart"
+  description: "Uses diskpart to display a list of all volumes (partitions) on the system."
+
+- request: "Quick format the E drive with the NTFS file system."
+  command: "format E: /q /fs:NTFS"
+  description: "Performs a quick format on a drive. WARNING: This erases all data on the drive."
+
+- request: "Analyze the fragmentation of my C drive."
+  command: "defrag C: /a"
+  description: "Analyzes the fragmentation status of the specified volume."
+
+  - request: "How much space is left on my C drive, in a way I can easily read?"
+  command: "fsutil volume diskfree c:"
+  description: "Shows the free and total space on a drive in a human-readable format (GB/MB/KB)."
+
+- request: "How can I clean up old and temporary files to free up space?"
+  command: "cleanmgr"
+  description: "Launches the Windows Disk Cleanup utility, a safe way to remove junk files."
+
+- request: "Is my hard drive okay? Can I do a quick health check?"
+  command: "wmic diskdrive get status"
+  description: "Performs a simple S.M.A.R.T. health check on connected disk drives. 'OK' is a good sign."
+
+- request: "I just plugged in my USB stick. What drive letter is it?"
+  command: "wmic logicaldisk where drivetype=2 get name"
+  description: "Specifically looks for removable drives (like USB sticks) and shows their drive letters."
+
+- request: "Just give me a quick list of all my drive letters."
+  command: "wmic logicaldisk get name"
+  description: "A simple command to list all logical drive letters currently on the system."
+
+- request: "What file system is my C drive using, like NTFS or FAT32?"
+  command: "fsutil fsinfo volumeinfo c:"
+  description: "Displays detailed information about a volume, including its file system type."
+
+- request: "My computer seems slow, should I check if my hard drive is fragmented?"
+  command: "defrag C: /a"
+  description: "Analyzes the specified drive for fragmentation without actually changing anything."
+
+- request: "How do I scan my C drive for potential errors?"
+  command: "chkdsk C:"
+  description: "Checks the integrity of the file system on a disk and reports any errors found."
+
+- request: "How do I rename my USB drive in drive E to 'MyData'?"
+  command: "label E: MyData"
+  description: "Changes the volume label (the name that appears in 'This PC') of a drive."

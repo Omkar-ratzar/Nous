@@ -1,0 +1,87 @@
+- request: "List all the tasks that are currently running."
+  command: "tasklist"
+  description: "Displays a list of all tasks running on the system, including their process ID (PID)."
+
+- request: "Find the process ID for chrome.exe."
+  command: "tasklist | findstr /i \"chrome.exe\""
+  description: "Filters the task list to find a specific process and its details."
+
+- request: "Show me all the tasks being run by the system user."
+  command: "tasklist /fi \"USERNAME eq SYSTEM\""
+  description: "Filters the task list to show only processes running under the SYSTEM user."
+
+- request: "Kill the process with the ID 1234."
+  command: "taskkill /pid 1234"
+  description: "Terminates a task using its Process ID (PID). Replace 1234 with the actual PID."
+
+- request: "Forcefully close all instances of notepad.exe."
+  command: "taskkill /im notepad.exe /f"
+  description: "Forcefully terminates one or more tasks by their image name."
+
+- request: "What is the status of the Windows Update service?"
+  command: "sc query wuauserv"
+  description: "Queries the status of a service. 'wuauserv' is the service name for Windows Update."
+
+- request: "Show me the configuration for the BITS service."
+  command: "sc qc BITS"
+  description: "Queries the configuration of a service, showing its binary path, start type, etc."
+
+- request: "Show me all the services that are currently running."
+  command: "sc query state= active"
+  description: "Displays all services that are currently in the active (running) state."
+
+- request: "Start the print spooler service."
+  command: "sc start spooler"
+  description: "Starts a system service. 'spooler' is the service name for the Print Spooler."
+
+- request: "Stop the print spooler service."
+  command: "sc stop spooler"
+  description: "Stops a system service. 'spooler' is the service name for the Print Spooler."
+
+- request: "List all running services using the net command."
+  command: "net start"
+  description: "Displays a list of all services that have been started on the system."
+
+- request: "Use WMI to terminate the mspaint.exe process."
+  command: "wmic process where name=\"mspaint.exe\" call terminate"
+  description: "Uses WMI to find a process by name and terminate it."
+
+- request: "A program is not responding, how can I force it to close?"
+  command: "taskkill /im program_name.exe /f"
+  description: "Forcefully terminates a program by its executable name. Replace 'program_name.exe'."
+
+- request: "Google Chrome is frozen, how do I shut it down completely?"
+  command: "taskkill /im chrome.exe /f /t"
+  description: "Forcefully terminates the chrome.exe process and any child processes it started."
+
+- request: "What's using up all my computer's memory right now?"
+  command: "tasklist /v /fi \"STATUS eq Running\" | sort /r /+65"
+  description: "Lists running tasks and sorts them by memory usage in descending order."
+
+- request: "Can you just show me a neat table of all running programs?"
+  command: "tasklist /fo table"
+  description: "Displays all running tasks in an easy-to-read table format."
+
+- request: "How do I temporarily stop Windows Update from downloading in the background?"
+  command: "sc stop wuauserv"
+  description: "Stops the Windows Update service. Requires administrator rights."
+
+- request: "My printer queue is stuck. How can I reset the print service?"
+  command: "sc stop spooler"
+  description: "Stops the print spooler service, which manages print jobs. This often clears a stuck queue."
+
+- request: "I stopped the print service, how do I turn it back on?"
+  command: "sc start spooler"
+  description: "Starts the print spooler service so you can print again."
+
+- request: "How can I check if the Windows Firewall service is running?"
+  command: "sc query MpsSvc"
+  description: "Queries the status of the Windows Defender Firewall service."
+
+- request: "Where is the file for the running 'notepad.exe' program located on my hard drive?"
+  command: "wmic process where name=\"notepad.exe\" get ExecutablePath"
+  description: "Finds the exact file path of a running process."
+
+- request: "Are there any chrome processes still running in the background?"
+  command: "tasklist | findstr /i \"chrome.exe\""
+  description: "Checks if any process with 'chrome.exe' in its name is currently running."

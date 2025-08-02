@@ -1,27 +1,33 @@
-__pycache__/
-*.pyc
-*.log
+# --- Secrets ---
+# Ignore files with secret keys and certificates
+.env
 *.pfx
 *.pem
 *.crt
 *.key
 Certs/
-*.exe
-.idea/
+
+# --- Python ---
+# Ignore cache files and compiled Python files
+__pycache__/
+*.pyc
+
+# --- IDE & Editor Config ---
+# Ignore VS Code, Visual Studio, and JetBrains (PyCharm/IntelliJ) files
 .vscode/
+.idea/
+.vs/
+*.suo
+*.user
+
+# --- Build Artifacts ---
+# Ignore compiled executables and build output folders
+*.exe
 bin/
 obj/
 InstallerSource/
-*.suo
-*.user
-# Ignore Visual Studio/JetBrains files
-.vs/
-*.user
-*.suo
 
-# Ignore build artifacts
-bin/
-obj/
-
-# Ignore logs
+# --- Logs ---
+# Ignore log files
+*.log
 Log.txt
